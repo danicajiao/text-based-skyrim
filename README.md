@@ -2,9 +2,11 @@
 
 An interpretation of Bethesda Game Studio's 2011 hit "The Elder Scrolls V: Skyrim" that is based entirely in a Windows console.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## About
 
-This repository contains the source files for the game written in pure C++.
+This repository contains the source files for the game written in Visual C++.
 
 ## Foundational Design Goals
 
