@@ -16,3 +16,6 @@ This repository contains the source files for the game written in pure C++.
 
 More to come!
 
+## License
+
+This repository is licensed under the MIT License. For more detail, please view the LICENSE file within this repository.
