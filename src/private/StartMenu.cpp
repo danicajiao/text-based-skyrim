@@ -3,20 +3,39 @@ using namespace std;
 
 void initStartMenu()
 {
-	HANDLE hStdout;		// console screen handle
+	HANDLE hStdout;		// std output handle
 	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	printLogo();
 	printTitle();
 	this_thread::sleep_for(chrono::seconds(4));
 	cls(hStdout);	// clears console screen
-	printTitle();
-	printMenuElements();
-	getChoice();
+	
+	// TODO: create menu logic
+	runMainMenu();
+	int choice = getChoice();
+
+	if (choice == 1)
+	{
+		runNewMenu(hStdout);
+	}
+	else if (choice == 2)
+	{
+		runLoadMenu(hStdout);
+	}
+	else if (choice == 3)
+	{
+		runCredits(hStdout);
+	}
+	else if (choice == 4)
+	{
+		exit(0);
+	}
 }
 
 void printLogo()
 {
+	// TODO: Find better way to align items
 	cout << "\t\t\t\t                        .    .                      \n"
 		 << "\t\t\t\t                       yo    oy                     \n"
 		 << "\t\t\t\t                      sy .    ys                    \n"
@@ -43,16 +62,39 @@ void printLogo()
 void printTitle()
 {
 	cout << "\t\t\t\t------------- The Elder Scrolls V: Skyrim -------------\n"
-		 << "\t\t\t\t\t\t  - CONSOLE EDITION -\n" << endl;
+		 << "\t\t\t\t                  - CONSOLE EDITION -                  \n"
+		 << endl;
 }
 
-void printMenuElements()
+void runMainMenu()
 {
+	printTitle();
 	cout << "[1] New\n"
 		 << "[2] Load\n"
 		 << "[3] Credits\n"
 		 << "[4] Quit\n"
 		 << endl;
+}
+
+void runNewMenu(HANDLE hStdout)
+{
+	cls(hStdout);
+	cout << "\t\t\t\t                   - Start New Game -                 \n\n"
+		 << endl;
+}
+
+void runLoadMenu(HANDLE hStdout)
+{
+	cls(hStdout);
+	cout << "\t\t\t\t                     - Load Game -                   \n\n"
+		<< endl;
+}
+
+void runCredits(HANDLE hStdout)
+{
+	cls(hStdout);
+	cout << "\t\t\t\t                      - Credits -                    \n\n"
+		<< endl;
 }
 
 int getChoice()
@@ -66,6 +108,7 @@ int getChoice()
 		cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 		cout << "Invalid option. Please enter a number from 1 to 4: ";
 		cin >> choice;
+		cout << endl;
 	}
 	return choice;
 }

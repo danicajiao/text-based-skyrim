@@ -8,5 +8,8 @@
 void initStartMenu();
 void printLogo();
 void printTitle();
-void printMenuElements();
+void runMainMenu();
+void runNewMenu(HANDLE hStdout);
+void runLoadMenu(HANDLE hStdout);
+void runCredits(HANDLE hStdout);
 int getChoice();
