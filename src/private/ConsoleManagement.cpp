@@ -1,4 +1,4 @@
-#include "ConsoleManagement.h"
+#include "../public/ConsoleManagement.h"
 
 void cls(HANDLE hConsole)
 {

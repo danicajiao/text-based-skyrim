@@ -1,5 +1,5 @@
-#include "StartMenu.h"
-#include "World.h"
+#include "../public/StartMenu.h"
+#include "../public/World.h"
 using namespace std;
 
 int main()

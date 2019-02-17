@@ -1,19 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Source Files\public">
-      <UniqueIdentifier>{38953168-9eab-46aa-b33c-bb5b1e10d549}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\private">
-      <UniqueIdentifier>{0f84cdf1-9e67-4260-9aaf-c6715e668ce5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Data Files">
       <UniqueIdentifier>{9c84c352-27dd-47c4-8064-eec06835df28}</UniqueIdentifier>
@@ -21,56 +11,59 @@
     <Filter Include="Data Files\Save Data">
       <UniqueIdentifier>{5c3ab4a7-0052-4222-8cd0-2a74056fcf00}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-    <ClCompile Include="Pawn.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-    <ClCompile Include="World.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-    <ClCompile Include="Cell.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-    <ClCompile Include="StartMenu.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-    <ClCompile Include="ConsoleManagement.cpp">
-      <Filter>Source Files\private</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Pawn.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="PPlayer.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="Cell.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="ECellNames.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="StartMenu.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="ConsoleManagement.h">
-      <Filter>Source Files\public</Filter>
-    </ClInclude>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7e0da142-6ca4-4904-aad3-ed813ae70cdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="StartupData.txt">
-      <Filter>Data Files</Filter>
+    <Text Include="data\StartupData.txt">
+      <Filter>Data Files\Save Data</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\private\Cell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\ConsoleManagement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\Pawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\StartMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\public\Cell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\ConsoleManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\ECellNames.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\Pawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\PPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\StartMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\World.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

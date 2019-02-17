@@ -1,5 +1,5 @@
 #pragma once
-#include "Cell.h"
+#include "../public/Cell.h"
 using namespace std;
 
 

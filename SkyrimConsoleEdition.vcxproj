@@ -144,27 +144,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleManagement.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Pawn.cpp" />
-    <ClCompile Include="Cell.cpp" />
-    <ClCompile Include="StartMenu.cpp" />
-    <ClCompile Include="World.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Cell.h" />
-    <ClInclude Include="ConsoleManagement.h" />
-    <ClInclude Include="ECellNames.h" />
-    <ClInclude Include="Pawn.h" />
-    <ClInclude Include="PPlayer.h" />
-    <ClInclude Include="StartMenu.h" />
-    <ClInclude Include="World.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="StartupData.txt" />
+    <Text Include="data\StartupData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\private\Cell.cpp" />
+    <ClCompile Include="src\private\ConsoleManagement.cpp" />
+    <ClCompile Include="src\private\main.cpp" />
+    <ClCompile Include="src\private\Pawn.cpp" />
+    <ClCompile Include="src\private\StartMenu.cpp" />
+    <ClCompile Include="src\private\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\public\Cell.h" />
+    <ClInclude Include="src\public\ConsoleManagement.h" />
+    <ClInclude Include="src\public\ECellNames.h" />
+    <ClInclude Include="src\public\Pawn.h" />
+    <ClInclude Include="src\public\PPlayer.h" />
+    <ClInclude Include="src\public\StartMenu.h" />
+    <ClInclude Include="src\public\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

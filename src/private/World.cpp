@@ -1,4 +1,4 @@
-#include "World.h"
+#include "../public/World.h"
 using namespace std;
 
 World::World() : timeHour(12), timeMinute(0), semanticDay("Morndas")

@@ -1,4 +1,4 @@
-#include "StartMenu.h"
+#include "../public/StartMenu.h"
 using namespace std;
 
 void initStartMenu()

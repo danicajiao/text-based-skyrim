@@ -1,4 +1,4 @@
-#include "Pawn.h"
+#include "../public/Pawn.h"
 using namespace std;
 
 Pawn::Pawn(int level, int baseHealth, int baseStamina, int baseMagicka, int totalWeight, int maxCarryWeight, int inventoryCount) : level(level), baseHealth(baseHealth), baseStamina(baseStamina), baseMagicka(baseMagicka), totalWeight(totalWeight), maxCarryWeight(maxCarryWeight), inventoryCount(inventoryCount)
