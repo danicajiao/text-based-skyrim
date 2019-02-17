@@ -2,7 +2,7 @@
 
 An interpretation of Bethesda Game Studio's 2011 hit "The Elder Scrolls V: Skyrim" that is based entirely in a Windows console.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![License: MIT](https://img.shields.io/github/repo-size/danicajiao/text-based-skyrim.svg?style=flat)]()
 
 ## About
 
@@ -24,4 +24,4 @@ The purpose of this software is for scholarship use only.
 
 ## License
 
-This repository is licensed under the MIT License. For more detail, please view the LICENSE file within this repository.
+This repository is licensed under the MIT License. For more details, please view the LICENSE file within this repository.
