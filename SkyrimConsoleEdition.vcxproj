@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\StartupData.txt" />
+    <Text Include="saves.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\private\Cell.cpp" />

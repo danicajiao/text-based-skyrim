@@ -22,6 +22,9 @@
     <Text Include="data\StartupData.txt">
       <Filter>Data Files\Save Data</Filter>
     </Text>
+    <Text Include="saves.txt">
+      <Filter>Data Files\Save Data</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\private\Cell.cpp">
