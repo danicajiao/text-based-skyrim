@@ -1,7 +1,7 @@
 #include "../public/StartMenu.h"
 using namespace std;
 
-void initStartMenu()
+void initStartMenu(bool &startFlag)
 {
 	HANDLE hStdout;		// std output handle
 	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -10,7 +10,7 @@ void initStartMenu()
 	printTitle();
 	this_thread::sleep_for(chrono::seconds(4));
 
-	bool startFlag = 0;
+	startFlag = false;
 
 	while (startFlag == false)
 	{
@@ -72,7 +72,7 @@ void runMainMenu(HANDLE hStdout, bool &startFlag)
 		runLoadMenu(hStdout, startFlag);
 		break;
 	case 3:
-		runCredits(hStdout);
+		runCredits(hStdout, startFlag);
 		break;
 	case 4:
 		runQuitMenu(hStdout, startFlag);
@@ -108,28 +108,35 @@ void runLoadMenu(HANDLE hStdout, bool &startFlag)
 	cls(hStdout);
 	cout << "\t\t\t\t             ---------- Load Game ----------         \n" << endl;
 
-	ifstream savefile;
-	savefile.open("saves.txt");
-
 	int count = 0;
 	string playername;
 	string date;
 	string time;
 	string meridiem;
 
+	ifstream savefile;
+	savefile.open("data/saves.txt");
+
 	cout << "[0] Cancel" << endl;
 
-	while (!savefile.eof())
+	if (savefile.fail())
 	{
-		savefile >> playername >> date >> time >> meridiem;
-		count++;
-		cout << "[" << count << "] " << playername << " " << date << " " << time << " " << meridiem << endl;
+		cout << "\nFailed to open the saves file." << endl;
+	}
+	else
+	{
+		while (!savefile.eof())
+		{
+			savefile >> playername >> date >> time >> meridiem;
+			count++;
+			cout << "[" << count << "] " << playername << " " << date << " " << time << " " << meridiem << endl;
+		}
 	}
 	cout << endl;
 
 	savefile.close();
 
-	int choice = getLoadChoice(count);
+	int choice = getLoadSaveChoice(count);
 
 	if (choice == 0)
 	{
@@ -137,12 +144,11 @@ void runLoadMenu(HANDLE hStdout, bool &startFlag)
 	}
 	else
 	{
-		// TODO: write game start logic
 		startFlag = true;
 	}
 }
 
-void runCredits(HANDLE hStdout)
+void runCredits(HANDLE hStdout, bool &startFlag)
 {
 	cls(hStdout);
 	cout << "\t\t\t\t              ---------- Credits ----------          \n\n"
@@ -153,9 +159,9 @@ void runCredits(HANDLE hStdout)
 
 	int choice = getChoice(MenuType::Credits);
 
-	if (true)
+	if (choice == 0)
 	{
-
+		runMainMenu(hStdout, startFlag);
 	}
 }
 
@@ -238,9 +244,9 @@ int getChoice(MenuType menu)
 	return choice;
 }
 
-int getLoadChoice(int count)
+int getLoadSaveChoice(int count)
 {
-	cout << "Select a save to load: ";
+	cout << "Select a save to load or enter '0' to cancel: ";
 	int choice;
 	cin >> choice;
 	cout << endl;

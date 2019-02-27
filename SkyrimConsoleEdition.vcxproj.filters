@@ -22,7 +22,7 @@
     <Text Include="data\StartupData.txt">
       <Filter>Data Files\Save Data</Filter>
     </Text>
-    <Text Include="saves.txt">
+    <Text Include="data\saves.txt">
       <Filter>Data Files\Save Data</Filter>
     </Text>
   </ItemGroup>

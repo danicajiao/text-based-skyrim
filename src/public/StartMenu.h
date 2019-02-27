@@ -15,14 +15,14 @@ enum class MenuType
 	Quit
 };
 
-void initStartMenu();
+void initStartMenu(bool &startFlag);
 void printLogo();
 void printTitle();
 void runMainMenu(HANDLE hStdout, bool &startFlag);
 void runNewMenu(HANDLE hStdout, bool &startFlag);
 void runLoadMenu(HANDLE hStdout, bool &startFlag);
-void runCredits(HANDLE hStdout);
+void runCredits(HANDLE hStdout, bool &startFlag);
 void runQuitMenu(HANDLE hStdout, bool &startFlag);
 int getChoice(MenuType menu);
-int getLoadChoice(int count);
+int getLoadSaveChoice(int count);
 
