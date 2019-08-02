@@ -1,20 +1,19 @@
 #include "../public/StartMenu.h"
 using namespace std;
 
-void initStartMenu(bool &startFlag)
+void initStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr)
 {
-	HANDLE hStdout;		// std output handle
-	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
+	//printLogo();
+	//printTitle();
+	//// delays execution of main menu
+	//this_thread::sleep_for(chrono::seconds(4));
 
-	printLogo();
-	printTitle();
-	this_thread::sleep_for(chrono::seconds(4));
+	startFlag = EStartType::None;
 
-	startFlag = false;
-
-	while (startFlag == false)
+	// loops until user chooses to either create or load a game
+	while (startFlag == EStartType::None)
 	{
-		runMainMenu(hStdout, startFlag);
+		runMainMenu(hStdoutPtr, startFlag);
 	}
 }
 
@@ -51,9 +50,9 @@ void printTitle()
 		 << endl;
 }
 
-void runMainMenu(HANDLE hStdout, bool &startFlag)
+void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
-	cls(hStdout);	// clears console screen
+	cls(*hStdoutPtr);	// clears console screen
 	printTitle();
 	cout << "[1] New\n"
 		 << "[2] Load\n"
@@ -61,21 +60,22 @@ void runMainMenu(HANDLE hStdout, bool &startFlag)
 		 << "[4] Quit\n"
 		 << endl;
 
-	int choice = getChoice(MenuType::Main);
+	int choice = getChoice(EMenuType::Main);
 
+	// runs a menu to the users corresponding choice
 	switch (choice)
 	{
 	case 1:
-		runNewMenu(hStdout, startFlag);
+		runNewMenu(hStdoutPtr, startFlag);
 		break;
 	case 2:
-		runLoadMenu(hStdout, startFlag);
+		runLoadMenu(hStdoutPtr, startFlag);
 		break;
 	case 3:
-		runCredits(hStdout, startFlag);
+		runCredits(hStdoutPtr, startFlag);
 		break;
 	case 4:
-		runQuitMenu(hStdout, startFlag);
+		runQuitMenu(hStdoutPtr, startFlag);
 		break;
 	default:
 		cout << "Error running menu" << endl;
@@ -83,29 +83,31 @@ void runMainMenu(HANDLE hStdout, bool &startFlag)
 	}
 }
 
-void runNewMenu(HANDLE hStdout, bool &startFlag)
+void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
-	cls(hStdout);
+	cls(*hStdoutPtr);	// clears screen
 	cout << "\t\t\t\t          ---------- Start New Game ----------       \n\n"
 		 << "[1] Yes\n"
 		 << "[2] No\n"
 		 << endl;
 
-	int choice = getChoice(MenuType::New);
+	int choice = getChoice(EMenuType::New);
 
 	if (choice == 1)
 	{
-		startFlag = true;
+		// will cause the loop that runs the menus to exit when '1' (Yes) is selected
+		startFlag = EStartType::New;
 	}
 	else
 	{
-		runMainMenu(hStdout, startFlag);
+		// returns back to main menu if '2' (No) is selected
+		runMainMenu(hStdoutPtr, startFlag);
 	}
 }
 
-void runLoadMenu(HANDLE hStdout, bool &startFlag)
+void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
-	cls(hStdout);
+	cls(*hStdoutPtr);	// clears screen
 	cout << "\t\t\t\t             ---------- Load Game ----------         \n" << endl;
 
 	int count = 0;
@@ -140,40 +142,40 @@ void runLoadMenu(HANDLE hStdout, bool &startFlag)
 
 	if (choice == 0)
 	{
-		runMainMenu(hStdout, startFlag);
+		runMainMenu(hStdoutPtr, startFlag);
 	}
 	else
 	{
-		startFlag = true;
+		startFlag = EStartType::Load;
 	}
 }
 
-void runCredits(HANDLE hStdout, bool &startFlag)
+void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
-	cls(hStdout);
+	cls(*hStdoutPtr);
 	cout << "\t\t\t\t              ---------- Credits ----------          \n\n"
 		 << "Designed and programmed by Daniel Cajiao\n"
 		 << "Inspired by Bethesda Game Studio's The Elder Scrolls V: Skyrim\n\n"
 		 << "[0] Back\n"
 		 << endl;
 
-	int choice = getChoice(MenuType::Credits);
+	int choice = getChoice(EMenuType::Credits);
 
 	if (choice == 0)
 	{
-		runMainMenu(hStdout, startFlag);
+		runMainMenu(hStdoutPtr, startFlag);
 	}
 }
 
-void runQuitMenu(HANDLE hStdout, bool &startFlag)
+void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
-	cls(hStdout);
+	cls(*hStdoutPtr);
 	cout << "\t\t\t\t               ---------- Quit ----------            \n\n"
 		 << "[1] Yes\n"
 		 << "[2] No\n"
 		 << endl;
 
-	int choice = getChoice(MenuType::Quit);
+	int choice = getChoice(EMenuType::Quit);
 
 	if (choice == 1)
 	{
@@ -181,15 +183,15 @@ void runQuitMenu(HANDLE hStdout, bool &startFlag)
 	}
 	else
 	{
-		runMainMenu(hStdout, startFlag);
+		runMainMenu(hStdoutPtr, startFlag);
 	}
 }
 
-int getChoice(MenuType menu)
+int getChoice(EMenuType menu)
 {
 	int choice;
 	
-	if (menu == MenuType::Main)
+	if (menu == EMenuType::Main)
 	{
 		cout << "Select a choice: ";
 		cin >> choice;
@@ -202,7 +204,7 @@ int getChoice(MenuType menu)
 			cin >> choice;
 		}
 	}
-	else if (menu == MenuType::New)
+	else if (menu == EMenuType::New)
 	{
 		cout << "Start a new game?: ";
 		cin >> choice;
@@ -215,7 +217,7 @@ int getChoice(MenuType menu)
 			cin >> choice;
 		}
 	}
-	else if (menu == MenuType::Credits)
+	else if (menu == EMenuType::Credits)
 	{
 		cout << "Enter '0' to return: ";
 		cin >> choice;
@@ -228,7 +230,7 @@ int getChoice(MenuType menu)
 			cin >> choice;
 		}
 	}
-	else if (menu == MenuType::Quit)
+	else if (menu == EMenuType::Quit)
 	{
 		cout << "Are you should you want to quit?: ";
 		cin >> choice;

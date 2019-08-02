@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
@@ -7,7 +7,7 @@
 #include <chrono>         // std::chrono::seconds
 #include "ConsoleManagement.h"
 
-enum class MenuType
+enum class EMenuType
 {
 	Main,
 	New,
@@ -15,14 +15,21 @@ enum class MenuType
 	Quit
 };
 
-void initStartMenu(bool &startFlag);
+enum class EStartType
+{
+	None,
+	New,
+	Load
+};
+
+void initStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr);
 void printLogo();
 void printTitle();
-void runMainMenu(HANDLE hStdout, bool &startFlag);
-void runNewMenu(HANDLE hStdout, bool &startFlag);
-void runLoadMenu(HANDLE hStdout, bool &startFlag);
-void runCredits(HANDLE hStdout, bool &startFlag);
-void runQuitMenu(HANDLE hStdout, bool &startFlag);
-int getChoice(MenuType menu);
+void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag);
+void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag);
+void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag);
+void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag);
+void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startFlag);
+int getChoice(EMenuType menu);
 int getLoadSaveChoice(int count);
 

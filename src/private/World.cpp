@@ -17,9 +17,8 @@ World::World() : timeHour(12), timeMinute(0), semanticDay("Morndas")
 	};
 }
 
-string World::getTime()
+string World::getWorldTime()
 {
-	// 
 	string parsedTime;
 	string parsedMins;
 

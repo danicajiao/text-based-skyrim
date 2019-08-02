@@ -8,7 +8,7 @@ class World
 {
 public:
 	World();	// Default constructor
-	std::string getTime();
+	std::string getWorldTime();
 	void listSubCells();
 	
 private:

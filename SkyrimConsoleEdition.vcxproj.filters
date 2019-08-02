@@ -14,6 +14,18 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{7e0da142-6ca4-4904-aad3-ed813ae70cdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script Files">
+      <UniqueIdentifier>{82ecf869-59d0-45fc-b5ff-8f6360402adc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script Files\prelude">
+      <UniqueIdentifier>{421c7030-de6e-41e9-956f-00b2e896dbab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script Files\prelude\public">
+      <UniqueIdentifier>{a7fb0b44-0019-46bd-aad8-9dbbcabdf8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script Files\prelude\private">
+      <UniqueIdentifier>{0b983280-7904-4955-b9c8-6188ff23e198}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
@@ -45,6 +57,12 @@
     <ClCompile Include="src\private\StartMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\private\SaveData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scripts\prelude\private\PreludeScript.cpp">
+      <Filter>Script Files\prelude\private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\public\Cell.h">
@@ -67,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="src\public\World.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\SaveData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts\prelude\public\PreludeScript.h">
+      <Filter>Script Files\prelude\public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
