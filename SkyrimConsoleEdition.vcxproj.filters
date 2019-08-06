@@ -63,6 +63,12 @@
     <ClCompile Include="scripts\prelude\private\PreludeScript.cpp">
       <Filter>Script Files\prelude\private</Filter>
     </ClCompile>
+    <ClCompile Include="src\private\CharacterCreation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\PPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\public\Cell.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="scripts\prelude\public\PreludeScript.h">
       <Filter>Script Files\prelude\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\CharacterCreation.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

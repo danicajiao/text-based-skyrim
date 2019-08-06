@@ -22,7 +22,7 @@ enum class EStartType
 	Load
 };
 
-void initStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr);
+void runStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr);
 void printLogo();
 void printTitle();
 void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag);

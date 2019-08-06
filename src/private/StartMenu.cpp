@@ -1,7 +1,7 @@
 #include "../public/StartMenu.h"
 using namespace std;
 
-void initStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr)
+void runStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr)
 {
 	//printLogo();
 	//printTitle();
@@ -86,7 +86,7 @@ void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
 	cls(*hStdoutPtr);	// clears screen
-	cout << "\t\t\t\t          ---------- Start New Game ----------       \n\n"
+	cout << "\t\t\t\t          ---------- Start New Game ----------\n\n"
 		 << "[1] Yes\n"
 		 << "[2] No\n"
 		 << endl;
@@ -108,7 +108,7 @@ void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
 	cls(*hStdoutPtr);	// clears screen
-	cout << "\t\t\t\t             ---------- Load Game ----------         \n" << endl;
+	cout << "\t\t\t\t             ---------- Load Game ----------\n" << endl;
 
 	int count = 0;
 	string playername;
@@ -153,7 +153,7 @@ void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
 	cls(*hStdoutPtr);
-	cout << "\t\t\t\t              ---------- Credits ----------          \n\n"
+	cout << "\t\t\t\t              ---------- Credits ----------\n\n"
 		 << "Designed and programmed by Daniel Cajiao\n"
 		 << "Inspired by Bethesda Game Studio's The Elder Scrolls V: Skyrim\n\n"
 		 << "[0] Back\n"
@@ -170,7 +170,7 @@ void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag)
 void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 {
 	cls(*hStdoutPtr);
-	cout << "\t\t\t\t               ---------- Quit ----------            \n\n"
+	cout << "\t\t\t\t               ---------- Quit ----------\n\n"
 		 << "[1] Yes\n"
 		 << "[2] No\n"
 		 << endl;

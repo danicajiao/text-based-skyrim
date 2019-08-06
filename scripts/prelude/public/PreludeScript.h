@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "../../../src/public/ConsoleManagement.h"
 
-void initPreludeScript(HANDLE *hStdoutPtr);
+void runPreludeScript(HANDLE *hStdoutPtr);

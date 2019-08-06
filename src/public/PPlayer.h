@@ -4,11 +4,18 @@
 class PPlayer : public Pawn
 {
 public:
-	PPlayer(int level, int baseHealth, int baseStamina, int baseMagicka, int totalWeight, int maxCarryWeight, int inventoryCount, std::string playerRace);
+	PPlayer(int level,
+		int baseHealth,
+		int baseStamina,
+		int baseMagicka,
+		int totalWeight,
+		int maxCarryWeight,
+		int inventoryCount,
+		string playerRace);
 
-	std::string getPlayerRace();
+	string getPlayerRace();
 	int getSkillPoints();
 private:
-	std::string playerRace;
+	string playerRace;
 	int skillPoints;
 };

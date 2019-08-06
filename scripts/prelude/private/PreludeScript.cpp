@@ -3,7 +3,7 @@
 #include "../public/PreludeScript.h"
 using namespace std;
 
-void initPreludeScript(HANDLE *hStdoutPtr)
+void runPreludeScript(HANDLE *hStdoutPtr)
 {
 	cls(*hStdoutPtr);
 	this_thread::sleep_for(chrono::seconds(2));
@@ -197,5 +197,10 @@ void initPreludeScript(HANDLE *hStdoutPtr)
 	this_thread::sleep_for(chrono::seconds(4));
 
 	cout << "Hadvar:\n\"Wait. You there. Step forward. Who are you?\n\n";
-	this_thread::sleep_for(chrono::seconds(8));
+	this_thread::sleep_for(chrono::seconds(6));
+
+	string choice;
+	cout << "Enter any key to continue: ";
+	cin >> choice;
+	cout << endl;
 }

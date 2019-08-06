@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="scripts\prelude\private\PreludeScript.cpp" />
     <ClCompile Include="src\private\Cell.cpp" />
+    <ClCompile Include="src\private\CharacterCreation.cpp" />
     <ClCompile Include="src\private\ConsoleManagement.cpp" />
     <ClCompile Include="src\private\main.cpp" />
     <ClCompile Include="src\private\Pawn.cpp" />
+    <ClCompile Include="src\private\PPlayer.cpp" />
     <ClCompile Include="src\private\SaveData.cpp" />
     <ClCompile Include="src\private\StartMenu.cpp" />
     <ClCompile Include="src\private\World.cpp" />
@@ -163,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="scripts\prelude\public\PreludeScript.h" />
     <ClInclude Include="src\public\Cell.h" />
+    <ClInclude Include="src\public\CharacterCreation.h" />
     <ClInclude Include="src\public\ConsoleManagement.h" />
     <ClInclude Include="src\public\ECellNames.h" />
     <ClInclude Include="src\public\Pawn.h" />
