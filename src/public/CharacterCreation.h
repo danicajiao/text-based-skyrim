@@ -2,38 +2,24 @@
 #include <iostream>
 #include <string>
 #include "ConsoleManagement.h"
+#include "PPlayer.h"
+#include "ERaces.h"
+#include "EGenders.h"
 using namespace std;
 
 enum class ECreationMenuType
 {
 	Main,
 	Race,
-	Sex,
+	Gender,
 	Name,
 	Done
 };
 
-enum class ERace
-{
-	Argonian,
-	Breton,
-	DarkElf,
-	HighElf,
-	Imperial,
-	Khajiit,
-	Nord,
-	Orc,
-	Redguard,
-	WoodElf
-};
-
-enum class ESex
-{
-	Male,
-	Female
-};
-
-void runCharacterCreation(HANDLE *hStdoutPtr);
-void runCreationMenu(HANDLE *hStdoutPtr, bool &isFinished);
+void initCharacterCreation(HANDLE *hStdoutPtr);
+void runCharacterCreationMenu(HANDLE *hStdoutPtr, PPlayer &playerTemp, bool &isFinished);
+void runRaceMenu(HANDLE *hStdoutPtr, PPlayer &playerTemp);
+void runGenderMenu(HANDLE *hStdoutPtr, PPlayer &playerTemp);
+void runNameMenu(HANDLE *hStdoutPtr, PPlayer &playerTemp);
+void runDoneMenu(HANDLE *hStdoutPtr, bool &isFinished);
 int getChoice(ECreationMenuType menu);
-void runRaceMenu(HANDLE *hStdoutPtr);

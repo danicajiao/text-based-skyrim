@@ -5,22 +5,31 @@ using namespace std;
 class Pawn
 {
 public:
-	Pawn(int level, int baseHealth, int baseStamina, int baseMagicka, int totalWeight, int maxCarryWeight, int inventoryCount);  //constructor
+	// default constructor
+	Pawn();
+	// constructor
+	Pawn(int level,
+		int health,
+		int stamina,
+		int magicka,
+		float totalWeight,
+		int maxCarryWeight,
+		int inventoryCount);
 
 	int getLevel();
-	int getBaseHealth();
-	int getBaseStamina();
-	int getBaseMagicka();
-	int getTotalWeight();
+	int getHealth();
+	int getStamina();
+	int getMagicka();
+	float getTotalWeight();
 	int getMaxCarryWeight();
 	int getInventoryCount();
 
-private:
+protected:
 	int level;
-	int baseHealth;
-	int baseStamina;
-	int baseMagicka;
-	int totalWeight;
+	int health;
+	int stamina;
+	int magicka;
+	float totalWeight;
 	int maxCarryWeight;
 	int inventoryCount;
 };

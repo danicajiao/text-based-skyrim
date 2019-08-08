@@ -3,10 +3,10 @@ using namespace std;
 
 void runStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr)
 {
-	//printLogo();
-	//printTitle();
-	//// delays execution of main menu
-	//this_thread::sleep_for(chrono::seconds(4));
+	printLogo();
+	printTitle();
+	// delays execution of main menu
+	this_thread::sleep_for(chrono::seconds(4));
 
 	startFlag = EStartType::None;
 
@@ -195,6 +195,7 @@ int getChoice(EMenuType menu)
 	{
 		cout << "Select a choice: ";
 		cin >> choice;
+		cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 		cout << endl;
 		while (choice < 1 || choice > 4)
 		{
@@ -208,6 +209,7 @@ int getChoice(EMenuType menu)
 	{
 		cout << "Start a new game?: ";
 		cin >> choice;
+		cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 		cout << endl;
 		while (choice < 1 || choice > 2)
 		{
@@ -221,6 +223,7 @@ int getChoice(EMenuType menu)
 	{
 		cout << "Enter '0' to return: ";
 		cin >> choice;
+		cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 		cout << endl;
 		while (choice != 0)
 		{
@@ -234,6 +237,7 @@ int getChoice(EMenuType menu)
 	{
 		cout << "Are you should you want to quit?: ";
 		cin >> choice;
+		cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 		cout << endl;
 		while (choice < 1 || choice > 2)
 		{
@@ -251,6 +255,7 @@ int getLoadSaveChoice(int count)
 	cout << "Select a save to load or enter '0' to cancel: ";
 	int choice;
 	cin >> choice;
+	cin.ignore(256, '\n');	// clear (up to 256) characters out of the buffer until a '\n' character is removed
 	cout << endl;
 
 	while (choice < 0 || choice > count)

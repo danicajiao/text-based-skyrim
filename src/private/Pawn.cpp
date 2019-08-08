@@ -1,7 +1,31 @@
 #include "../public/Pawn.h"
 using namespace std;
 
-Pawn::Pawn(int level, int baseHealth, int baseStamina, int baseMagicka, int totalWeight, int maxCarryWeight, int inventoryCount) : level(level), baseHealth(baseHealth), baseStamina(baseStamina), baseMagicka(baseMagicka), totalWeight(totalWeight), maxCarryWeight(maxCarryWeight), inventoryCount(inventoryCount)
+Pawn::Pawn() :
+	level(1),
+	health(100),
+	stamina(100),
+	magicka(100),
+	totalWeight(0),
+	maxCarryWeight(300)
+{
+	//...
+}
+
+Pawn::Pawn(int level,
+	int health,
+	int stamina,
+	int magicka,
+	float totalWeight,
+	int maxCarryWeight,
+	int inventoryCount) : 
+	level(level),
+	health(health),
+	stamina(stamina),
+	magicka(magicka),
+	totalWeight(totalWeight),
+	maxCarryWeight(maxCarryWeight),
+	inventoryCount(inventoryCount)
 {
 	//...
 }
@@ -11,22 +35,22 @@ int Pawn::getLevel()
 	return level;
 }
 
-int Pawn::getBaseHealth()
+int Pawn::getHealth()
 {
-	return baseHealth;
+	return health;
 }
 
-int Pawn::getBaseStamina()
+int Pawn::getStamina()
 {
-	return baseStamina;
+	return stamina;
 }
 
-int Pawn::getBaseMagicka()
+int Pawn::getMagicka()
 {
-	return baseMagicka;
+	return magicka;
 }
 
-int Pawn::getTotalWeight()
+float Pawn::getTotalWeight()
 {
 	return totalWeight;
 }
