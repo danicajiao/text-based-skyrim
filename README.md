@@ -1,4 +1,4 @@
-# Console-Based Skyrim
+# Text-Based Skyrim
 
 An interpretation of Bethesda Game Studio's 2011 hit "The Elder Scrolls V: Skyrim" that is based entirely in a Windows console.
 
