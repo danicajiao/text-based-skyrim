@@ -26,9 +26,22 @@ public:
 	void setPlayerRace(ERace raceChoice);
 	void setPlayerGender(EGender genderChoice);
 	void setPlayerName(string nameChoice);
+
+	template<class Archive>
+	void serialize(Archive & archive)
+	{
+		archive(cereal::make_nvp("Pawn", cereal::base_class<Pawn>(this)));
+		archive(CEREAL_NVP(playerName),
+			CEREAL_NVP(playerRace),
+			CEREAL_NVP(playerGender),
+			CEREAL_NVP(skillPoints)
+		);
+	}
+
 private:
 	string playerName;
 	ERace playerRace;
 	EGender playerGender;
 	int skillPoints;
 };
+

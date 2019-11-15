@@ -1,9 +1,9 @@
-#include "../public/ConsoleManagement.h"
-#include "../public/StartMenu.h"
-#include "../public/World.h"
-#include "../../scripts/prelude/public/PreludeScript.h"
-#include "../public/CharacterCreation.h"
-#include "../public/PPlayer.h"
+#include "public/ConsoleManagement.h"
+#include "public/StartMenu.h"
+#include "public/World.h"
+#include "../scripts/prelude/public/PreludeScript.h"
+#include "public/CharacterCreation.h"
+#include "public/PPlayer.h"
 using namespace std;
 
 int main()
@@ -20,7 +20,6 @@ int main()
 	if (startFlag == EStartType::New)
 	{
 		runPreludeScript(hStdoutPtr);
-		initCharacterCreation(hStdoutPtr);
 	}
 
 	return 0;

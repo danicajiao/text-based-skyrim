@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "ConsoleManagement.h"
 #include "PPlayer.h"

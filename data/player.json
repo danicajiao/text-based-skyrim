@@ -1,0 +1,17 @@
+{
+    "player": {
+        "Pawn": {
+            "level": 1,
+            "health": 100,
+            "stamina": 100,
+            "magicka": 100,
+            "totalWeight": 0.0,
+            "maxCarryWeight": 300,
+            "inventoryCount": -858993460
+        },
+        "playerName": "Prisoner",
+        "playerRace": 6,
+        "playerGender": 0,
+        "skillPoints": 0
+    }
+}

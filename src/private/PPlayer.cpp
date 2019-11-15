@@ -104,7 +104,6 @@ int PPlayer::getSkillPoints()
 	return skillPoints;
 }
 
-
 void PPlayer::setPlayerRace(ERace raceChoice)
 {
 	playerRace = raceChoice;

@@ -5,7 +5,7 @@ using namespace std;
 
 void runPreludeScript(HANDLE *hStdoutPtr)
 {
-	cls(*hStdoutPtr);
+	/*cls(*hStdoutPtr);
 	this_thread::sleep_for(chrono::seconds(2));
 	cout << "\n\n\n\n\n\t\t\t\t               Daniel Cajiao Presents               \n\n";
 	this_thread::sleep_for(chrono::seconds(3));
@@ -146,7 +146,7 @@ void runPreludeScript(HANDLE *hStdoutPtr)
 	cout << "You, Ralof, and Ulfric are taken off the wagon, watched by an Imperial Captain and an Imperial Soldier, Hadvar,\nwho is holding a list.\n\n\n";
 	this_thread::sleep_for(chrono::seconds(8));
 
-	cout << "Imperial Captain:\n\"Step towards the block when we call your name. One at a time.\"\n\n\n";
+	cout << "Imperial Captain:\n\"Step towards the block when we call your name. One at a time.\"\n\n";
 	this_thread::sleep_for(chrono::seconds(6));
 
 	cout << "Ralof:\n\"Empire loves their damn lists.\"\n\n";
@@ -197,10 +197,13 @@ void runPreludeScript(HANDLE *hStdoutPtr)
 	this_thread::sleep_for(chrono::seconds(4));
 
 	cout << "Hadvar:\n\"Wait. You there. Step forward. Who are you?\n\n";
-	this_thread::sleep_for(chrono::seconds(6));
+	this_thread::sleep_for(chrono::seconds(6));*/
 
-	string choice;
-	cout << "Enter any key to continue: ";
-	cin >> choice;
-	cout << endl;
+	//string choice;
+	//cout << "Enter any key to continue: ";
+	//cin >> choice;
+	//cout << endl;
+
+	initCharacterCreation(hStdoutPtr);
+
 }

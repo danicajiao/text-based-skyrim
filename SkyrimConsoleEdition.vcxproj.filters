@@ -11,9 +11,6 @@
     <Filter Include="Data Files\Save Data">
       <UniqueIdentifier>{5c3ab4a7-0052-4222-8cd0-2a74056fcf00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{7e0da142-6ca4-4904-aad3-ed813ae70cdd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Script Files">
       <UniqueIdentifier>{82ecf869-59d0-45fc-b5ff-8f6360402adc}</UniqueIdentifier>
     </Filter>
@@ -25,6 +22,12 @@
     </Filter>
     <Filter Include="Script Files\prelude\private">
       <UniqueIdentifier>{0b983280-7904-4955-b9c8-6188ff23e198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\private">
+      <UniqueIdentifier>{4fd8b707-2f60-4ea5-a866-97c4e3d0e559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\public">
+      <UniqueIdentifier>{08a6f021-69ff-454b-aa75-1ac8f2a1b149}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,67 +42,67 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\private\Cell.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\World.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\ConsoleManagement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\Pawn.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\StartMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\private\SaveData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="scripts\prelude\private\PreludeScript.cpp">
       <Filter>Script Files\prelude\private</Filter>
     </ClCompile>
-    <ClCompile Include="src\private\CharacterCreation.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\private\Cell.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\CharacterCreation.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\ConsoleManagement.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\Pawn.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="src\private\PPlayer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\SaveData.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\StartMenu.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\World.cpp">
+      <Filter>Source Files\private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\public\Cell.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\ConsoleManagement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\ECellNames.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\Pawn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\PPlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\StartMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\World.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\SaveData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="scripts\prelude\public\PreludeScript.h">
       <Filter>Script Files\prelude\public</Filter>
     </ClInclude>
+    <ClInclude Include="src\public\Cell.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="src\public\CharacterCreation.h">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\ConsoleManagement.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\ECellNames.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\Pawn.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\PPlayer.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\SaveData.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\StartMenu.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\World.h">
+      <Filter>Source Files\public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

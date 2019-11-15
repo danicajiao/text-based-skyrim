@@ -2,12 +2,20 @@
 
 void initCharacterCreation(HANDLE *hStdoutPtr)
 {
+	PPlayer player;
 	bool isFinished = false;
-	PPlayer playerTemp;
+
 
 	while (isFinished == false)
 	{
-		runCharacterCreationMenu(hStdoutPtr, playerTemp, isFinished);
+		runCharacterCreationMenu(hStdoutPtr, player, isFinished);
+	}
+
+	ofstream fileOut("data/player.json");
+
+	{
+		cereal::JSONOutputArchive oarchive(fileOut);
+		oarchive(CEREAL_NVP(player));
 	}
 }
 
