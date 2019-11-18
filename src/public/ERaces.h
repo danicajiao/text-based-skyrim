@@ -1,4 +1,6 @@
 #pragma once
+
+// enum value representing character races
 enum class ERace
 {
 	Argonian,

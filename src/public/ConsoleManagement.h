@@ -1,5 +1,5 @@
 #pragma once
 #include <windows.h>
 
-// clears screen
+// clears console screen
 void cls(HANDLE hConsole);

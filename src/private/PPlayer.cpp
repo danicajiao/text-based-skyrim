@@ -1,6 +1,11 @@
 #include "../public/PPlayer.h"
 
-PPlayer::PPlayer() : Pawn(), playerName("Prisoner"), playerRace(ERace::Nord), playerGender(EGender::Male), skillPoints(0)
+PPlayer::PPlayer() :
+	Pawn(),
+	playerName("Prisoner"),
+	playerRace(ERace::Nord),
+	playerGender(EGender::Male),
+	skillPoints(0)
 {
 	//...
 }

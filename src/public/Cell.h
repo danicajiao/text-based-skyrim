@@ -6,13 +6,17 @@
 class Cell
 {
 public:
-	// Constructor that creates a hold cell
+	// constructor that creates a hold cell
 	Cell(EHold holdName);
-	// Constructor that creates a town cell
+	// constructor that creates a town cell
 	Cell(ETown townName);
+	// gets the cell's name
 	std::string getCellName();
 private:
+	// the cell's name
 	std::string cellName;
+	// if cell has been discovered by player
 	bool isDiscovered;
-	std::vector<Cell> subCells;
+	// vector of subcells 
+	std::vector<Cell> subcells;
 };

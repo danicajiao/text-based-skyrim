@@ -6,8 +6,9 @@ Pawn::Pawn() :
 	health(100),
 	stamina(100),
 	magicka(100),
-	totalWeight(0),
-	maxCarryWeight(300)
+	totalCarryWeight(0),
+	maxCarryWeight(150),
+	inventoryCount(0)
 {
 	//...
 }
@@ -23,7 +24,7 @@ Pawn::Pawn(int level,
 	health(health),
 	stamina(stamina),
 	magicka(magicka),
-	totalWeight(totalWeight),
+	totalCarryWeight(totalCarryWeight),
 	maxCarryWeight(maxCarryWeight),
 	inventoryCount(inventoryCount)
 {
@@ -50,9 +51,9 @@ int Pawn::getMagicka()
 	return magicka;
 }
 
-float Pawn::getTotalWeight()
+float Pawn::getTotalCarryWeight()
 {
-	return totalWeight;
+	return totalCarryWeight;
 }
 
 int Pawn::getMaxCarryWeight()

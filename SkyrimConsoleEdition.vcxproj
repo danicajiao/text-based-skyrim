@@ -145,11 +145,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="data\player.json" />
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="data\saves.txt" />
-    <Text Include="data\StartupData.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scripts\prelude\private\PreludeScript.cpp" />
@@ -159,7 +156,6 @@
     <ClCompile Include="src\private\ConsoleManagement.cpp" />
     <ClCompile Include="src\private\Pawn.cpp" />
     <ClCompile Include="src\private\PPlayer.cpp" />
-    <ClCompile Include="src\private\SaveData.cpp" />
     <ClCompile Include="src\private\StartMenu.cpp" />
     <ClCompile Include="src\private\World.cpp" />
   </ItemGroup>
@@ -171,7 +167,6 @@
     <ClInclude Include="src\public\ECellNames.h" />
     <ClInclude Include="src\public\Pawn.h" />
     <ClInclude Include="src\public\PPlayer.h" />
-    <ClInclude Include="src\public\SaveData.h" />
     <ClInclude Include="src\public\StartMenu.h" />
     <ClInclude Include="src\public\World.h" />
   </ItemGroup>

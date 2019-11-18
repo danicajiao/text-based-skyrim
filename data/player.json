@@ -1,13 +1,13 @@
 {
     "player": {
-        "Pawn": {
+        "inheritedPawn": {
             "level": 1,
             "health": 100,
             "stamina": 100,
             "magicka": 100,
-            "totalWeight": 0.0,
-            "maxCarryWeight": 300,
-            "inventoryCount": -858993460
+            "totalCarryWeight": 0.0,
+            "maxCarryWeight": 150,
+            "inventoryCount": 0
         },
         "playerName": "Prisoner",
         "playerRace": 6,

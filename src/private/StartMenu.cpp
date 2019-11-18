@@ -1,19 +1,19 @@
 #include "../public/StartMenu.h"
 using namespace std;
 
-void runStartMenu(EStartType &startFlag, HANDLE *hStdoutPtr)
+void runStartMenu(HANDLE *hStdoutPtr, EStartType &startType)
 {
 	printLogo();
 	printTitle();
 	// delays execution of main menu
 	this_thread::sleep_for(chrono::seconds(4));
 
-	startFlag = EStartType::None;
+	startType = EStartType::None;
 
 	// loops until user chooses to either create or load a game
-	while (startFlag == EStartType::None)
+	while (startType == EStartType::None)
 	{
-		runMainMenu(hStdoutPtr, startFlag);
+		runMainMenu(hStdoutPtr, startType);
 	}
 }
 
@@ -50,9 +50,9 @@ void printTitle()
 		 << endl;
 }
 
-void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
+void runMainMenu(HANDLE *hStdoutPtr, EStartType &startType)
 {
-	cls(*hStdoutPtr);	// clears console screen
+	cls(*hStdoutPtr);
 	printTitle();
 	cout << "[1] New\n"
 		 << "[2] Load\n"
@@ -66,24 +66,24 @@ void runMainMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 	switch (choice)
 	{
 	case 1:
-		runNewMenu(hStdoutPtr, startFlag);
+		runNewMenu(hStdoutPtr, startType);
 		break;
 	case 2:
-		runLoadMenu(hStdoutPtr, startFlag);
+		runLoadMenu(hStdoutPtr, startType);
 		break;
 	case 3:
-		runCredits(hStdoutPtr, startFlag);
+		runCredits(hStdoutPtr, startType);
 		break;
 	case 4:
-		runQuitMenu(hStdoutPtr, startFlag);
+		runQuitMenu(hStdoutPtr, startType);
 		break;
 	default:
-		cout << "Error running menu" << endl;
+		cout << "Failed to run a menu" << endl;
 		break;
 	}
 }
 
-void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
+void runNewMenu(HANDLE *hStdoutPtr, EStartType &startType)
 {
 	cls(*hStdoutPtr);	// clears screen
 	cout << "\t\t\t\t          ---------- Start New Game ----------\n\n"
@@ -96,16 +96,16 @@ void runNewMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 	if (choice == 1)
 	{
 		// will cause the loop that runs the menus to exit when '1' (Yes) is selected
-		startFlag = EStartType::New;
+		startType = EStartType::New;
 	}
 	else
 	{
 		// returns back to main menu if '2' (No) is selected
-		runMainMenu(hStdoutPtr, startFlag);
+		runMainMenu(hStdoutPtr, startType);
 	}
 }
 
-void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
+void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startType)
 {
 	cls(*hStdoutPtr);	// clears screen
 	cout << "\t\t\t\t             ---------- Load Game ----------\n" << endl;
@@ -142,15 +142,15 @@ void runLoadMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 
 	if (choice == 0)
 	{
-		runMainMenu(hStdoutPtr, startFlag);
+		runMainMenu(hStdoutPtr, startType);
 	}
 	else
 	{
-		startFlag = EStartType::Load;
+		startType = EStartType::Load;
 	}
 }
 
-void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag)
+void runCredits(HANDLE *hStdoutPtr, EStartType &startType)
 {
 	cls(*hStdoutPtr);
 	cout << "\t\t\t\t              ---------- Credits ----------\n\n"
@@ -163,11 +163,11 @@ void runCredits(HANDLE *hStdoutPtr, EStartType &startFlag)
 
 	if (choice == 0)
 	{
-		runMainMenu(hStdoutPtr, startFlag);
+		runMainMenu(hStdoutPtr, startType);
 	}
 }
 
-void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
+void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startType)
 {
 	cls(*hStdoutPtr);
 	cout << "\t\t\t\t               ---------- Quit ----------\n\n"
@@ -183,7 +183,7 @@ void runQuitMenu(HANDLE *hStdoutPtr, EStartType &startFlag)
 	}
 	else
 	{
-		runMainMenu(hStdoutPtr, startFlag);
+		runMainMenu(hStdoutPtr, startType);
 	}
 }
 

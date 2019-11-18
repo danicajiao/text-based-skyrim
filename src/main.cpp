@@ -14,10 +14,10 @@ int main()
 	// std output handle pointer
 	HANDLE *hStdoutPtr = &hStdout;
 
-	// enum flag that will be used to determine whether a new game is launched, a saved game is loaded, or will remain in the start menu
-	EStartType startFlag;
-	runStartMenu(startFlag, hStdoutPtr);
-	if (startFlag == EStartType::New)
+	// enum value that will be used to determine whether a new game is launched, a saved game is loaded, or will remain in the start menu
+	EStartType startType;
+	runStartMenu(hStdoutPtr, startType);
+	if (startType == EStartType::New)
 	{
 		runPreludeScript(hStdoutPtr);
 	}
